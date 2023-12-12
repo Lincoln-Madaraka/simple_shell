@@ -1,9 +1,9 @@
 #include "shell.h"
 
 /**
- * free_data - 
- * @datash: 
- * Return: 
+ * free_data - func points to dat
+ * @datash:  points to vars in shell
+ * Return: void
  */
 void free_data(data_shell *datash)
 {
@@ -19,10 +19,10 @@ void free_data(data_shell *datash)
 }
 
 /**
- * set_data - 
- * @datash: 
- * @av: 
- * Return: 
+ * set_data - func points to set dat
+ * @datash: points to vas in shell
+ * @av: points to av
+ * Return: void
  */
 void set_data(data_shell *datash, char **av)
 {
@@ -49,10 +49,10 @@ void set_data(data_shell *datash, char **av)
 }
 
 /**
- * main - 
- * @ac: 
- * @av: 
- * Return:
+ * main - function
+ * @ac:  points to chr
+ * @av: points to str
+ * Return: void
  */
 int main(int ac, char **av)
 {
