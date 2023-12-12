@@ -1,13 +1,15 @@
 #include "shell.h"
+#include <linux/limits.h>
 
 /**
- * cd_dot - handles the cd . command 
- * @datash: pointer to the data shell structure containing environment variables
- * Return: void
- */
+* cd_dot - handles the cd . command
+* @datash: pointer to the data shell struct containing envirmt vars
+* Return: void
+*/
 void cd_dot(data_shell *datash)
 {
 	char pwd[PATH_MAX];
+
 	char *dir, *cp_pwd, *cp_strtok_pwd;
 
 	getcwd(pwd, sizeof(pwd));
@@ -31,7 +33,6 @@ void cd_dot(data_shell *datash)
 	if (cp_strtok_pwd != NULL)
 	{
 		cp_strtok_pwd = _strtok(NULL, "\0");
-
 		if (cp_strtok_pwd != NULL)
 			rev_string(cp_strtok_pwd);
 	}
@@ -50,14 +51,15 @@ void cd_dot(data_shell *datash)
 }
 
 /**
- * cd_to - handles the cd command with a specific directory arg
- *
- * @datash: Pointer to the data shell structure containing environment variables
- * Return: void
- */
+* cd_to - handles the cd command with a specific directory arg
+*
+* @datash: Pointer to the data shell structure containing environment variables
+* Return: void
+*/
 void cd_to(data_shell *datash)
 {
 	char pwd[PATH_MAX];
+
 	char *dir, *cp_pwd, *cp_dir;
 
 	getcwd(pwd, sizeof(pwd));
@@ -84,14 +86,15 @@ void cd_to(data_shell *datash)
 }
 
 /**
- * cd_previous - handles the cd - command
- *
- * @datash: Pointer to the data shell structure containing environment vars
- * Return: void
- */
+* cd_previous - handles the cd - command
+*
+* @datash: Pointer to the data shell structure containing environment vars
+* Return: void
+*/
 void cd_previous(data_shell *datash)
 {
 	char pwd[PATH_MAX];
+
 	char *p_pwd, *p_oldpwd, *cp_pwd, *cp_oldpwd;
 
 	getcwd(pwd, sizeof(pwd));
@@ -126,13 +129,14 @@ void cd_previous(data_shell *datash)
 }
 
 /**
- * cd_to_home -  handles the cd ~ command
- * @datash: Pointer to the data shell structure containing environment vars
- * Return: void
- */
+* cd_to_home -  handles the cd ~ command
+* @datash: Pointer to the data shell structure containing environment vars
+* Return: void
+*/
 void cd_to_home(data_shell *datash)
 {
 	char *p_pwd, *home;
+
 	char pwd[PATH_MAX];
 
 	getcwd(pwd, sizeof(pwd));
