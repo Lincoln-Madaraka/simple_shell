@@ -1,0 +1,14 @@
+alias: alias
+       Define or display aliases.
+
+    Without any  arguments, `alias' prints  list of aliases in reusable
+    form `alias NAME=VALUE' on stdout
+
+    Else, an alias is defined for each NAME whose VALUE is given.
+    A trailing space in VALUE causes the next subject  to be checked for
+    alias substitution when the alias is increased in size
+
+    Options:
+	NONE
+    Exit Status:
+    alias returns true except when a NAME is supplied for which no alias has been defnd
